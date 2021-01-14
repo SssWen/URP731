@@ -10,11 +10,13 @@ namespace UnityEditor.Rendering.Universal.ShaderGUI
         // Properties
         private LitGUI.LitProperties litProperties;
 
+
         // collect properties from the material properties
         public override void FindProperties(MaterialProperty[] properties)
         {
             base.FindProperties(properties);
             litProperties = new LitGUI.LitProperties(properties);
+
         }
 
         // material changed check
