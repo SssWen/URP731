@@ -17,6 +17,9 @@ half _BumpScale;
 half _OcclusionStrength;
 CBUFFER_END
 
+// perinstance
+// They cannot be provided per instance and have to be declared in the global scope.
+// but _ST Stands for scale and translation, this property should be part of the UnityPerMaterial buffer,can be set per instance.
 TEXTURE2D(_OcclusionMap);       SAMPLER(sampler_OcclusionMap);
 TEXTURE2D(_MetallicGlossMap);   SAMPLER(sampler_MetallicGlossMap);
 TEXTURE2D(_SpecGlossMap);       SAMPLER(sampler_SpecGlossMap);

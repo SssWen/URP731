@@ -224,7 +224,9 @@
             #define UNITY_INSTANCED_ARRAY_SIZE  500
         #endif
     #endif
-
+    // Instance 本质上是一个数组，数组里存放同类型的属性
+    // Textures和sampler states是 shader的资源，不能设置为 perinstance,需要被定义为全局变量。
+    // _ST可以翻入PerMaterialBuffer里，可以设置为PerInstance
     #define UNITY_INSTANCING_BUFFER_START(buf)      UNITY_INSTANCING_CBUFFER_SCOPE_BEGIN(UnityInstancing_##buf) struct {
     #define UNITY_INSTANCING_BUFFER_END(arr)        } arr##Array[UNITY_INSTANCED_ARRAY_SIZE]; UNITY_INSTANCING_CBUFFER_SCOPE_END
     #define UNITY_DEFINE_INSTANCED_PROP(type, var)  type var;

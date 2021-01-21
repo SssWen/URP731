@@ -34,6 +34,17 @@ struct InputData
     half3   vertexLighting;
     half3   bakedGI;
 };
+// Add
+struct F_InputData
+{
+    float3  positionWS;
+    half3   normalWS;
+    half3   viewDirectionWS;
+    float4  shadowCoord;
+    half    fogCoord;
+    half3   vertexLighting;
+    half3   bakedGI;
+};
 
 ///////////////////////////////////////////////////////////////////////////////
 //                      Constant Buffers                                     //

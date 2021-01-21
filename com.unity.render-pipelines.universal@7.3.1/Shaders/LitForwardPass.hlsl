@@ -134,6 +134,7 @@ half4 LitPassFragment(Varyings input) : SV_Target
     InitializeStandardLitSurfaceData(input.uv, surfaceData);// (uv, out SurfaceData outSurfaceData)
     //LitInput.hlsl SurfaceData: alpha,albedo,metallic,specular,smoothness,normalTS,occlusion,emission
     InputData inputData;
+    // LitForwardPass.hlsl
     InitializeInputData(input, surfaceData.normalTS, inputData);
     // Lighting.hlsl
     half4 color = UniversalFragmentPBR(inputData, surfaceData.albedo, surfaceData.metallic, surfaceData.specular, surfaceData.smoothness, surfaceData.occlusion, surfaceData.emission, surfaceData.alpha);
